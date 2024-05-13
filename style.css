@@ -1,3 +1,7 @@
+:root
+{
+    font-size: clamp(14px, 2vh, 18px);
+}
 body
 {
 background-color: hsl(30, 38%, 92%);
@@ -5,9 +9,9 @@ display: flex;
 justify-content: center;    
 align-items:center;
 flex-direction: column;
-width: 30rem;
-margin: auto auto;
-height: auto;
+width: 100vh;
+height: 100vh;
+margin: auto;
 }
 .card
 {
@@ -16,22 +20,157 @@ height: auto;
     justify-content: space-between;
     align-items: center;
     background-color: hsl(0, 0%, 100%);
-    padding: 1em;
     border-radius: 1em;
-    margin: auto 0;
+    margin:0;
+    padding:0;
+    width: 50rem;
+}
+@media (max-width: 1440px), (min-width:375px) {
+   
+    body
+        {
+        display: flex;
+        justify-content: center;    
+        align-items:center;
+        flex-direction: column;
+        width: 100vh;
+        height: 100vh;
+    
+        }
+    .card 
+        {
+        flex-direction: column; /* stack elements vertically on mobile */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 1em;
+        padding:0;
+        margin: auto auto;
+        width: 35rem;
+        }
+
+    .card_image {
+        width: 100%; /* full width images on mobile */
+        height: auto;
+    }
+
+    .text {
+        text-align: center; /* center text for mobile readability */
+    }
+
+    .button {
+        width: 100%; /* full width button for easier clickability */
+    }
+
+    .price {
+        flex-direction: column; /* stack prices vertically or keep them inline based on design */
+        align-items: center; /* center align the prices */
+        gap: 10px; /* smaller gap */
+    }
+    /* How can I improve on my CSS? */
+    // I would suggest using a CSS preprocessor like SASS or LESS to make your CSS more modular and easier to maintain. You can also use CSS Grid or Flexbox for layout instead of floats and positioning. Additionally, consider using BEM (Block Element Modifier) methodology for naming your classes to make your code more readable and scalable.
+}
+#image
+{
+    display: block;
+    width: 100%;
+    height:100%;
+    border-radius: 1em 0 0 1em;
 }
 .card_image
 {
     width: 100%;
-    height: auto;
+    height: 100%;
     flex: 1;
+    
 }
 .text
 {
-    flex: 1;
+    flex: 0.75;
+    padding: 2em;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
 }
-#image
+#catagory 
 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: hsl(228, 12%, 48%);
+    padding:0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1em;
+}
+
+#card_content h1
+{
+    font-family: 'Fraunces';
+    font-weight: 700;
+    color: black;
+    font-size: 3rem;
+    padding: 0.25em auto;
+}
+#card_content p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: hsl(228, 12%, 48%);
+    line-height: 1.75em;
+    margin:0;
+    padding:0;
+}
+#cardprice1 
+{
+    color: hsl(158, 36%, 37%);
+    font-size: 2.5rem;
+    font-family:'Fraunces';
+    font-weight: 700;
+}
+#cardprice2
+{
+    color: hsl(228, 12%, 48%);
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+.price
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;  
+    gap: 2em;  
+
+}
+#button
+{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    display: block;
+}
+.card__btn
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-display: 700;
+    background-color: hsl(158, 36%, 37%);
+    color: hsl(0, 0%, 100%);
+    padding: 1em 4em;
+    border: none;
+    box-shadow: none;
+    border-radius: 0.5em;
     width: 100%;
-    height: auto;
+    transition: ease-in-out 0.1s;
+}
+#button :hover {
+    background-color: hsl(159, 23%, 26%); 
+    cursor: pointer; 
+    font-weight: 700;
+    
 }
