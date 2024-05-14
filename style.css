@@ -25,52 +25,6 @@ margin: auto;
     padding:0;
     width: 50rem;
 }
-@media (max-width: 1440px), (min-width:375px) {
-   
-    body
-        {
-        display: flex;
-        justify-content: center;    
-        align-items:center;
-        flex-direction: column;
-        width: 100vh;
-        height: 100vh;
-    
-        }
-    .card 
-        {
-        flex-direction: column; /* stack elements vertically on mobile */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: hsl(0, 0%, 100%);
-        border-radius: 1em;
-        padding:0;
-        margin: auto auto;
-        width: 35rem;
-        }
-
-    .card_image {
-        width: 100%; /* full width images on mobile */
-        height: auto;
-    }
-
-    .text {
-        text-align: center; /* center text for mobile readability */
-    }
-
-    .button {
-        width: 100%; /* full width button for easier clickability */
-    }
-
-    .price {
-        flex-direction: column; /* stack prices vertically or keep them inline based on design */
-        align-items: center; /* center align the prices */
-        gap: 10px; /* smaller gap */
-    }
-    /* How can I improve on my CSS? */
-    // I would suggest using a CSS preprocessor like SASS or LESS to make your CSS more modular and easier to maintain. You can also use CSS Grid or Flexbox for layout instead of floats and positioning. Additionally, consider using BEM (Block Element Modifier) methodology for naming your classes to make your code more readable and scalable.
-}
 #image
 {
     display: block;
