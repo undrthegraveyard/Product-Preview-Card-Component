@@ -95,7 +95,7 @@ width: 15px;
 height: 16px;
 background-color: var(--clr-primary-400);
 color: var(--clr-neutral-100);
-background-image: url(../images/icon-cart.svg);
+background-image: url(images/icon-cart.svg);
 }
 
 .product{
