@@ -88,9 +88,7 @@ body{
 .button:hover, .button:focus{
     background-color: var(--clr-tertiary-500);
 }
-.button[data-icon="shopping-cart"].button:focus,.button:focus{
-    background-color: var(--clr-tertiary-500);
-}
+
 .button[data-icon="shopping-cart"]::before{
 content: "";
 width: 15px;
@@ -99,6 +97,8 @@ background-color: var(--clr-primary-400);
 color: var(--clr-neutral-100);
 background-image: url(images/icon-cart.svg);
 }
+
+
 
 .product{
     --content-padding: 1.5rem;  
