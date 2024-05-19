@@ -87,11 +87,10 @@ body{
 
 .button:hover, .button:focus{
     background-color: var(--clr-tertiary-500);
-    .button[data-icon="shopping-cart"]::before{
-        background-color: var(--clr-tertiary-500);
-    }
 }
-
+.button[data-icon="shopping-cart"].button:focus,.button:focus{
+    background-color: var(--clr-tertiary-500);
+}
 .button[data-icon="shopping-cart"]::before{
 content: "";
 width: 15px;
