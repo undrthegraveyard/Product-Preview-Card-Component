@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root{
     --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-tertiary-500: hsl(158, 36%, 20%);
     --clr-secondary-200: hsl(30,38%,92%);
 
     --clr-neutral-900: hsl(212, 21%, 14%);
@@ -34,7 +32,7 @@
     4. Improve text rendering
   */
   body {
-    line-height: 1.5;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
   /*
@@ -56,34 +54,83 @@
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   } 
+
+  h1, h2, h3{
+ line-height: 1;
+  }
 /* general styling */
 
 body{
     font-family: var(--ff-base);
-    font-size: 1rem;
     font-weight: var(--fw-regular);
     color: var(--clr-neutral-400);
     background-color: var(--clr-secondary-200);
-    width: 100vw;
-    height: 100vh;
-
-    /* mobile view */
     display: grid;
     place-content: center;
     margin: 1rem;
+    height: 100vh;
 }
 .flex-group{
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    align-items: center;
+}
+
+/* For screen reader */
+.visually-hidden:not(:focus):not(:active){
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+/* button */
+.button{
+    cursor: pointer;
+    padding: 0.5em 1.5em;
+    text-decoration: none;
+    border: 0;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+}
+
+.button:hover, .button:focus{
+    background-color: var(--clr-tertiary-500);
+}
+
+.button[data-icon="shopping-cart"]::before{
+content: "";
+width: 15px;
+height: 16px;
+background-color: var(--clr-primary-400);
+color: var(--clr-neutral-100);
+background-image: url(../images/icon-cart.svg);
 }
 
 .product{
-    --content-padding: 1.5rem;
+    --content-padding: 1.5rem;  
     --content-spacing: 1rem;
     background-color: var(--clr-neutral-100);
-    border-radius: 1rem;
-    overflow:hidden;
+    border-radius: 0.5rem;
+    overflow:hidden; 
+    display: grid;
+    max-width: 600px;
+}
+
+@media (min-width:600px){
+    .product{
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .product__content{
@@ -94,6 +141,27 @@ body{
 
 .product__category{
     text-transform: uppercase;
-    letter-spacing: 6px;
-    font-size: 1rem;
+    letter-spacing: 0.45em;
+    font-size: 0.875rem;
+}
+.product__title{
+    font-size: 2rem;
+    font-family: var(--ff-accents);
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-900);
+}
+.product__description{
+    font-size: 0.875rem;
+    color: var(--clr-neutral-400);
+}
+.product__price{
+    font-size: 2rem;
+    font-family: var(--ff-accents);
+    color: var(--clr-primary-400);
+    font-weight: var(--fw-bold);
+}   
+picture img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }

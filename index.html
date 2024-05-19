@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <!-- Title -->
   <title>Product Preview Page</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Custom Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
   <body>
     <main>
       
       <article class="product">
         
-        <picture>
+        <picture class="product__img">
+         <source srcset="images/image-product-desktop.jpg" media="(min-width: 600px)">
           <img src="images/image-product-mobile.jpg" alt="Chanel Perfume">
         </picture>
         <div class="product__content">
@@ -22,12 +35,17 @@
             Perfumer-Creator for the House of CHANEL.</p>
           
           <div class="flex-group">
-            <p class="poduct__price">$149.99</p>
-            <p class="product__original-price">$169.99</p>
-          
+            <p class="product__price">
+              <span class="visually-hidden">Current Price:</span>
+              $149.99
+            </p>
+            <p class="product__original-price">
+            <span class="visually-hidden">Original Price:</span>
+              $169.99
+            </p> 
           </div>
           
-          <button class="button"><img src="images/icon-cart.svg"/> ADD TO CART</button>
+          <button class="button" data-icon="shopping-cart">Add To Cart</button>
         </div>
       
       </article>
